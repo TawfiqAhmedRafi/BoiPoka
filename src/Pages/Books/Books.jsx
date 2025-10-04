@@ -18,7 +18,7 @@ const Books = ({ data }) => {
       <Suspense
         fallback={<span className="loading loading-dots loading-xl"></span>}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
           {data.map((singleBook) => (
             <Book key={singleBook.bookId} singleBook={singleBook}></Book>
           ))}
