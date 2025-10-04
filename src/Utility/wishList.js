@@ -14,12 +14,13 @@ const getWishedBook=()=>{
 const addToWish=(id)=>{
      const storedBookData= getWishedBook();
  if(storedBookData.includes(id)){
-    return ;
+    return false;
  }
  else{
     storedBookData.push(id)
     const data= JSON.stringify(storedBookData)
     localStorage.setItem("wishlist",data)
+    return true;
  }
 }
 export {addToWish,getWishedBook};

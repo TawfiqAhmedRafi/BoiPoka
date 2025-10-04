@@ -29,6 +29,7 @@ const BookDetails = () => {
   //console.log(id,data)
   const handleRead= id =>{
       const added =  addToStoreDB(id)
+      console.log(added)
       if(added){
         MySwal.fire({
   title: "Good job!",
@@ -68,8 +69,8 @@ const handleWish= id =>{
       </figure>
 
       {/* Content Section */}
-      <div className="w-1/2 p-6 flex flex-col justify-between space-y-3">
-        <h2 className="text-5xl font-bold">{bookName}</h2>
+      <div className="w-1/2 p-6 flex flex-col justify-between space-y-3 " style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+        <h2 className="text-5xl font-bold" >{bookName}</h2>
         <p className="mb-0">By: {author}</p>
         <div className="border-t border-dashed my-1"></div>
 

@@ -19,13 +19,14 @@ const addToStoreDB=(id)=>{
  const storedBookData= getStoredBook();
  if(storedBookData.includes(id)){
     //toast("Vai id already exists in readlist")
-    return;
+    return false;
  }
  else{
     
     storedBookData.push(id)
     const data= JSON.stringify(storedBookData)
     localStorage.setItem("readlist",data)
+    return true
  }
 }
 export {addToStoreDB,getStoredBook};
