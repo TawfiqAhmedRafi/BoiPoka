@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 const About = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 my-5">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"

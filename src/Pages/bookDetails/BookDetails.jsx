@@ -58,38 +58,33 @@ const handleWish= id =>{
     
   }
   return (
-    <div className="card card-side bg-base-100 shadow-sm flex w-full p-10">
-      {/* Image Section */}
-      <figure className="w-1/2 flex items-center justify-center bg-gray-100">
-        <img
-          className="w-[425px] p-7 object-cover"
-          src={image}
-          alt={bookName}
-        />
-      </figure>
+   
 
-      {/* Content Section */}
-      <div className="w-1/2 p-6 flex flex-col justify-between space-y-3 " style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-        <h2 className="text-5xl font-bold" >{bookName}</h2>
-        <p className="mb-0">By: {author}</p>
+
+    <div className="card lg:card-side bg-base-100 shadow-sm p-5 md:p-10 my-5">
+  <figure className="md:w-1/2 flex items-center justify-center bg-gray-100 p-3">
+    <img
+      src={image}
+      alt="Album" />
+  </figure>
+
+  <div className="md:w-1/2 p-6 flex flex-col justify-between space-y-3 " style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+        <h2 className="text-3xl md:text-5xl font-bold" >{bookName}</h2>
+        <p className="mb-0">By:<span className="ml-2 font-medium text-[#0D3B66]">{author}</span> </p>
         <div className="border-t border-dashed my-1"></div>
-
-        <div className="badge text-2xl mt-4">{category}</div>
+        <div className="badge text-xl md:text-2xl mt-4">{category}</div>
 
         <div className="border-t border-dashed my-2"></div>
-
-        <div>
+          <div>
           <span className="font-bold">Review :</span> {review}
         </div>
-        <div className="flex justify-between">
+        <div className="flex gap-8">
           <p className="font-bold">Tag</p>
-          {tags.map((tag) => (
-            <button className="text-[#23BE0A]">#{tag}</button>
+          {tags.map((tag,i) => (
+            <button key={i} className="text-[#23BE0A]">#{tag}</button>
           ))}
         </div>
-        <div className="border-t border-dashed my-1"></div>
-
-        <div className="flex gap-15">
+                <div className="flex gap-15">
           <div className="flex flex-col gap-3 text-[#131313B3]">
             <p>Number of Pages :</p>
             <p>Publisher :</p>
@@ -103,13 +98,16 @@ const handleWish= id =>{
             <p>{rating}</p>
           </div>
         </div>
-        <div className="flex gap-15">
+                <div className="flex gap-15">
           <button onClick={()=>handleRead(id)} className="btn ">Mark as Read</button>
           <button onClick={()=>handleWish(id)} className="btn btn-info">Wishlist</button>
         </div>
-      </div>
-      <ToastContainer />
-    </div>
+        
+  </div>
+  <ToastContainer />
+</div>
+ 
+  
     
   );
 };
