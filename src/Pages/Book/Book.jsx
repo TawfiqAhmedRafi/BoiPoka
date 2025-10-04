@@ -8,16 +8,16 @@ const Book = ({singleBook}) => {
 
     return (
     <Link to={`/bookDetails/${bookId}`}>
-           <div className="card bg-base-100 w-96 shadow-sm border p-4 ">
-  <figure className='p-4 bg-gray-100 w-11/12 mx-auto rounded-xl '>
-    <img className='h-[166px]'
+           <div className="card bg-base-100 w-96 shadow-sm  p-4 ">
+  <figure className='p-4 bg-gray-100 w-11/12 mx-auto rounded-xl overflow-hidden'>
+    <img className='h-[166px] '
       src={image}
       alt="Shoes" />
   </figure>
   <div className="card-body">
     <div className='flex justify-center gap-10 text-green-500'>
         {
-        tags.map(tag=><button>{tag}</button> )
+        tags.map((tag,i)=><button key={i}>{tag}</button> )
     }
     </div>
     <h2 className="card-title">

@@ -1,8 +1,8 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense } from 'react';
 import Book from '../Book/Book';
 
 const Books = ({data}) => {
-    const [allBooks , setAllBooks]= useState([]);
+    //const [allBooks , setAllBooks]= useState([]);
     // useEffect(()=>{
     //     fetch("booksData.json")
     //     .then(res => res.json())
@@ -12,7 +12,7 @@ const Books = ({data}) => {
     // },[])
   
     return (
-        <div>
+        <div className='mb-10'>
             <h1 className='text-3xl text-center p-6'>Hello Books</h1>
             <Suspense fallback={ <span className="loading loading-dots loading-xl"></span> }>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
