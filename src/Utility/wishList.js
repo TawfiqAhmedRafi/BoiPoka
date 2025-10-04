@@ -1,3 +1,5 @@
+
+
 const getWishedBook=()=>{
     const storedBookSTR=localStorage.getItem("wishlist");
  if(storedBookSTR){
@@ -12,7 +14,7 @@ const getWishedBook=()=>{
 const addToWish=(id)=>{
      const storedBookData= getWishedBook();
  if(storedBookData.includes(id)){
-    alert("Vai id already exists")
+    return ;
  }
  else{
     storedBookData.push(id)

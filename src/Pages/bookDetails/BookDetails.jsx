@@ -2,6 +2,12 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import { addToStoreDB } from "../../Utility/addToDB";
 import { addToWish } from "../../Utility/wishList";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const MySwal = withReactContent(Swal)
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -22,10 +28,33 @@ const BookDetails = () => {
   } = singleBook;
   //console.log(id,data)
   const handleRead= id =>{
-        addToStoreDB(id)
+      const added =  addToStoreDB(id)
+      if(added){
+        MySwal.fire({
+  title: "Good job!",
+  text: "Added to Read List",
+  icon: "success"
+});
+      }
+      else{
+         toast("This book is already in your readlist!");
+      }
+        
   }
-  const handleWish= id =>{
-     addToWish(id)
+const handleWish= id =>{
+    const added= addToWish(id);
+    if(added){
+         MySwal.fire({
+  title: "Good job!",
+  text: "Added to WishList",
+  icon: "success"
+});
+
+    }
+    else{
+        toast("This book is already in your wishlist!");
+    }
+    
   }
   return (
     <div className="card card-side bg-base-100 shadow-sm flex w-full p-10">
@@ -78,7 +107,9 @@ const BookDetails = () => {
           <button onClick={()=>handleWish(id)} className="btn btn-info">Wishlist</button>
         </div>
       </div>
+      <ToastContainer />
     </div>
+    
   );
 };
 

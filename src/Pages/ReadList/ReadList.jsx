@@ -53,7 +53,7 @@ const ReadList = () => {
 
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center my-10">
      <div className="dropdown dropdown-start mb-4">
   <div tabIndex={0} role="button" className="btn bg-green-500 text-white">
     Sort By: {sort ? sort : ""}
