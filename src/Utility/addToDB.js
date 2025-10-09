@@ -1,7 +1,4 @@
 
-
-
- 
 const getStoredBook =()=>{
 
  const storedBookSTR=localStorage.getItem("readlist");
